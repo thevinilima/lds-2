@@ -1,11 +1,10 @@
-# Nome do projeto
+# Sistema de Aluguel de Carros
 Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 ## Integrantes
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* André Almeida
+* Vinicius Lima
+* Vitor de Figueiredo
 
 ## Orientadores
 * Nome completo do professor 1
