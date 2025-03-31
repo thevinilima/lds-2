@@ -1,0 +1,78 @@
+@startuml
+
+' Define classes
+class Usuario {
+  -id: int
+  -nome: String
+  -email: String
+  -senha: String
+  +cadastrar(): void
+  +login(): void
+}
+
+class Cliente {
+  -rg: String
+  -cpf: String
+  -endereco: String
+  -profissao: String
+  -entidadesEmpregadoras: List<String>
+  -rendimentos: List<Float>
+
+  +cadastrar(): void
+}
+
+class Agente {
+  -idAgente: int
+  -nomeAgente: String
+  +modificarPedidoAluguel(): void
+  +avaliarPedidoAluguel(): void
+  +registrarAutomovel(): void
+}
+
+class Banco {
+  -idBanco: int
+  -nomeBanco: String
+}
+
+class PedidoAluguel {
+  -idPedido: int
+  -dataPedido: Date
+  -status: String
+  +introduzirPedidoAluguel(cliente: Cliente): void
+  +modificarPedidoAluguel(cliente: Cliente): void
+  +consultarPedidoAluguel(cliente: Cliente): void
+  +cancelarPedidoAluguel(cliente: Cliente): void
+  +analisar(): void
+}
+
+class Automovel {
+  -matricula: String
+  -ano: int
+  -marca: String
+  -modelo: String
+  -placa: String
+  -proprietario: String
+}
+
+class ContratoCredito {
+  -idContrato: int
+  -valor: Float
+  -dataContrato: Date
+  +associarContratoCredito(banco: Banco): void
+  +aprovarContratoCredito(): void
+  +negarContratoCredito(): void
+}
+
+Usuario <|-- Cliente
+Usuario <|-- Agente
+Agente --> PedidoAluguel : analisar()
+Cliente --> PedidoAluguel : introduzirPedidoAluguel(cliente: Cliente)
+Cliente --> PedidoAluguel : modificarPedidoAluguel(cliente: Cliente)
+Cliente --> PedidoAluguel : consultarPedidoAluguel(cliente: Cliente)
+Cliente --> PedidoAluguel : cancelarPedidoAluguel(cliente: Cliente)
+Agente --> Automovel : registrarAutomovel()
+Banco --> ContratoCredito : fornece
+PedidoAluguel --> Automovel : possui
+PedidoAluguel --> ContratoCredito : associado
+
+@enduml

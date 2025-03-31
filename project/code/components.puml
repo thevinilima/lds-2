@@ -1,0 +1,49 @@
+@startuml
+
+left to right direction
+package "Gestão de Pedidos e Contratos" {
+  [ClienteController]
+  [PedidoController]
+  [ContratoController]
+  [ClienteService]
+  [PedidoService]
+  [ContratoService]
+  [ClienteRepository]
+  [PedidoRepository]
+  [ContratoRepository]
+
+}
+
+package "SGBD"{
+  [JPA]
+ }
+
+package "Construção Dinâmica de Páginas Web" {
+  [formularioCliente.html]
+  [listaClientes.html]
+  [formularioPedido.html]
+  [listaPedidos.html]
+  [formularioContrato.html]
+  [listaContratos.html]
+}
+
+[ClienteController] --> [ClienteService]
+[PedidoController] --> [PedidoService]
+[ContratoController] --> [ContratoService]
+
+[ClienteService] --> [ClienteRepository]
+[PedidoService] --> [PedidoRepository]
+[ContratoService] --> [ContratoRepository]
+
+[ClienteRepository] --> [JPA]
+[PedidoRepository] --> [JPA]
+[ContratoRepository] --> [JPA]
+
+[ClienteController] --> [formularioCliente.html]
+[ClienteController] --> [listaClientes.html]
+[PedidoController] --> [formularioPedido.html]
+[PedidoController] --> [listaPedidos.html]
+[ContratoController] --> [formularioContrato.html]
+[ContratoController] --> [listaContratos.html]
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+
+' Definir pacotes conforme o padrão MVC
+package "Model" {
+  class Cliente
+  class Agente
+  class Banco
+  class PedidoAluguel
+  class Automovel
+  class ContratoCredito
+}
+
+package "View" {
+  class PedidoAluguelView
+  class AutomovelView
+  class ContratoCreditoView
+}
+
+package "Controller" {
+  class PedidoAluguelController
+  class AutomovelController
+  class ContratoCreditoController
+}
+
+Cliente --> PedidoAluguelController : "gerencia"
+Agente --> PedidoAluguelController : "analisando"
+Agente --> AutomovelController : "registrando"
+Banco --> ContratoCreditoController : "associando"
+
+PedidoAluguelController --> PedidoAluguelView : "atualiza"
+AutomovelController --> AutomovelView : "atualiza"
+ContratoCreditoController --> ContratoCreditoView : "atualiza"
+
+
+PedidoAluguelController --> PedidoAluguel : "manipula"
+AutomovelController --> Automovel : "manipula"
+ContratoCreditoController --> ContratoCredito : "manipula"
+
+@enduml
