@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Clientes</title>
+    <title>Lista de Automóveis</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@
         }
 
         th {
-            background-color: blue;
+            background-color: #0d6efd;
             color: white;
         }
 
@@ -37,49 +37,49 @@
             background-color: #f1f1f1;
         }
 
-        .btn {
+        a {
             display: inline-block;
-            padding: 8px 12px;
-            margin: 4px;
-            background-color: blue;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0d6efd;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             text-align: center;
         }
 
-        .btn:hover {
+        a:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
-<h1>Clientes Cadastrados</h1>
+<h1>Lista de Automóveis</h1>
 
 <table>
     <thead>
     <tr>
-        <th>Nome</th>
-        <th>CPF</th>
-        <th>Endereço</th>
-        <th>Profissão</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
         <th>Ações</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="cliente : ${clientes}">
-        <td th:text="${cliente.nome}">Nome</td>
-        <td th:text="${cliente.cpf}">CPF</td>
-        <td th:text="${cliente.endereco}">Endereço</td>
-        <td th:text="${cliente.profissao}">Profissão</td>
+    <tr th:each="automovel : ${automoveis}">
+        <td th:text="${automovel.marca}">Marca</td>
+        <td th:text="${automovel.modelo}">Modelo</td>
+        <td th:text="${automovel.ano}">Ano</td>
+        <td th:text="${automovel.placa}">Placa</td>
         <td>
-            <a th:href="@{/pedidos/novo/{clienteId}(clienteId=${cliente.id})}" class="btn">Criar Pedido</a>
-            <a th:href="@{/pedidos/cliente/{clienteId}(clienteId=${cliente.id})}" class="btn">Ver Pedidos</a>
+            <a th:href="@{/automoveis/editar/{id}(id=${automovel.id})}">Editar</a>
+            <a th:href="@{/automoveis/excluir/{id}(id=${automovel.id})}" onclick="return confirm('Tem certeza que deseja excluir este automóvel?')">Excluir</a>
         </td>
     </tr>
     </tbody>
 </table>
 
-<a href="/clientes/novo" class="btn">Cadastrar Novo Cliente</a>
+<a th:href="@{/automoveis/novo}">Adicionar Novo Automóvel</a>
 </body>
 </html>

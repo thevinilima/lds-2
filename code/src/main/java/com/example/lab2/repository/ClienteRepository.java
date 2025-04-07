@@ -1,6 +1,6 @@
-package org.example.alugueldecarros.repository;
+package com.example.lab2.repository;
 
-import org.example.alugueldecarros.model.Cliente;
+import com.example.lab2.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {

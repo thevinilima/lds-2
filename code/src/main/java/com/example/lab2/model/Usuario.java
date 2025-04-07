@@ -1,4 +1,4 @@
-package org.example.alugueldecarros.model;
+package com.example.lab2.model;
 
 import jakarta.persistence.*;
 import java.util.List;

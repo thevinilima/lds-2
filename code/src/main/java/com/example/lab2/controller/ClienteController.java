@@ -1,11 +1,11 @@
-package org.example.alugueldecarros.controller;
+package com.example.lab2.controller;
 
-import org.example.alugueldecarros.repository.ClienteRepository;
+import com.example.lab2.model.Cliente;
+import com.example.lab2.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.example.alugueldecarros.model.Cliente;
 
 import java.util.List;
 
