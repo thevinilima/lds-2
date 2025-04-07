@@ -11,29 +11,29 @@ package "Model" {
 }
 
 package "View" {
-  class PedidoAluguelView
-  class AutomovelView
-  class ContratoCreditoView
+  class AluguelView
+  class PedidoView
+  class ContratoView
 }
 
 package "Controller" {
-  class PedidoAluguelController
-  class AutomovelController
-  class ContratoCreditoController
+  class ClienteController
+  class PedidoController
+  class ContratoController
 }
 
-Cliente --> PedidoAluguelController : "gerencia"
-Agente --> PedidoAluguelController : "analisando"
-Agente --> AutomovelController : "registrando"
-Banco --> ContratoCreditoController : "associando"
+Cliente --> ClienteController : "gerencia"
+Agente --> ClienteController : "analisando"
+Agente --> PedidoController : "registrando"
+Banco --> ContratoController : "associando"
 
-PedidoAluguelController --> PedidoAluguelView : "atualiza"
-AutomovelController --> AutomovelView : "atualiza"
-ContratoCreditoController --> ContratoCreditoView : "atualiza"
+ClienteController --> AluguelView : "atualiza"
+PedidoController --> PedidoView : "atualiza"
+ContratoController --> ContratoView : "atualiza"
 
 
-PedidoAluguelController --> PedidoAluguel : "manipula"
-AutomovelController --> Automovel : "manipula"
-ContratoCreditoController --> ContratoCredito : "manipula"
+ClienteController --> PedidoAluguel : "manipula"
+PedidoController --> Automovel : "manipula"
+ContratoController --> ContratoCredito : "manipula"
 
 @enduml
