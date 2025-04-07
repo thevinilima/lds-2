@@ -11,7 +11,7 @@ O sistema de aluguel de automóveis é projetado para permitir que clientes e ag
 **Para que** eu possa acessar e utilizar os serviços oferecidos.
 
 #### Critérios de Aceitação:
-- O usuário deve fornecer informações básicas, como nome, e-mail e senha.
+- O usuário deve fornecer informações básicas, como nome, e-mail, senha e endereço.
 - O sistema deve validar a informação e criar uma conta para o usuário.
 - O usuário deve receber uma confirmação de cadastro por e-mail.
 
@@ -83,7 +83,16 @@ O sistema de aluguel de automóveis é projetado para permitir que clientes e ag
 - O agente deve fornecer informações detalhadas sobre o veículo, como matrícula, ano, marca, modelo e placa.
 - O sistema deve adicionar o veículo ao inventário e associá-lo ao proprietário (cliente, empresa ou banco).
 
-### 9. Associação de Contrato de Crédito ao Aluguel
+### 9. Registro de Clientes
+**Como** um agente,  
+**Eu quero** ver os clientes cadastrados no sistema,  
+**Para que** eu posso analisar as informações dos clientes.
+
+#### Critérios de Aceitação:
+- O agente deve ter autorização para ver os registros.
+- O sistema deve adicionar o cliente ao registro com todas as suas informações.
+
+### 10. Associação de Contrato de Crédito ao Aluguel
 **Como** um banco,  
 **Eu quero** associar um contrato de crédito a um pedido de aluguel,  
 **Para que** o cliente possa financiar o aluguel do veículo.
